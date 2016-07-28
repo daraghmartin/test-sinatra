@@ -5,7 +5,7 @@ set :bind, '0.0.0.0'
 
 environment = ENV['ENVIRONMENT'] || 'no-env'
 
-get '/api/hello/*' do
+get '/api/hello/' do
   content_type :json
   { hello: 'world', environment: environment}.to_json
 end
