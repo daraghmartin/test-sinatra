@@ -17,4 +17,15 @@ RUN apt-get clean -y  && \
    rm -rf /usr/share/locale/*  && \
    rm -rf /var/cache/debconf/*-old  && \
    rm -rf /var/lib/apt/lists/*  && \
-   rm -rf /usr/share/doc/* 
+   rm -rf /usr/share/doc/*
+
+
+COPY app/ /app
+WORKDIR /app
+RUN bundle install
+
+ENV PORT 4567
+EXPOSE 4567
+
+ENTRYPOINT ["ruby"]
+CMD ["app.rb"]
