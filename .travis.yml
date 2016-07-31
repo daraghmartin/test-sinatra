@@ -1,4 +1,7 @@
 language: bash
 
+rvm:
+  - 2.2
+
 script:
   - cd app && bundle install && rspec test-rspec.rb
