@@ -3,7 +3,7 @@ Test Sinatra in a container
 
 Each file should be run from the directory itself.
 
-Install the chef_dk to get all the requirements for testing
+Install the chef_dk to get all the requirements for developing/testing OR install ruby, rspec, etc.
 
 ### App
 
