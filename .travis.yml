@@ -1,0 +1,4 @@
+language: bash
+
+script:
+  - cd app && bundle install && rspec test-rspec.rb
