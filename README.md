@@ -62,8 +62,18 @@ Call ```curl http://localhost:4567/api/hello/ ``` and you will see ```{"hello":"
 
 ### Run remotely
 
+1)
+
 At https://hub.docker.com/r/daraghmartin/test-sinatra/
 
 The images are on docker hub so just do a: ```docker pull daraghmartin/test-sinatra```
 
 Drop into your favourite local repo or store and run.
+
+2) 
+
+Integrate with compose
+
+3)
+
+There is an example chef cookbook supplied.  Include "recipe[run-sinatra::run]" in your run list.
