@@ -54,6 +54,16 @@ Specifying different Environment Variables will change the behaviour
 
 e.g. -e "ENVIRONMENT=test"
 
+Call ```curl http://localhost:4567/api/hello/ ``` and you will see ```{"hello":"world","environment":"test"}``` versuse ```{"hello":"world","environment":"no-env"}```
+
 ### Compose
 
 ```docker-compose up```
+
+### Run remotely
+
+At https://hub.docker.com/r/daraghmartin/test-sinatra/
+
+The images is on docker hub so just do a: ```docker pull daraghmartin/test-sinatra```
+
+Drop into your favourite local repo or store and run.
