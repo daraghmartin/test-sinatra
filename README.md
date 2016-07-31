@@ -3,40 +3,67 @@ Test Sinatra in a container
 
 Each file should be run from the directory itself.
 
-Install the chef\_dk to get all the requirements for testing
+Install the chef_dk to get all the requirements for testing
 
-** App
+### App
 
-./run-local.sh - this will run it for you 
+```cd app && ./run-local.sh - this will run it for you ```
 
-./test-local.sh - this will run the rspec test
+```./test-local.sh - this will run the rspec test```
 
-** Container
+### Build and Tag Image
 
 build.sh 
 
 OR
 
-./build.sh CHOSEN\_TAG
+```./build.sh CHOSEN_TAG```
 
 just calling build.sh will create an image as latest
 
 calling with tag will build latest and then tag it
 
-** Quick test
+### Run
 
-Maybe use tmux
+Maybe use tmux or -d
 
-docker run -it -e "ENVIRONMENT=test" -p 4567:4567 daraghmartin/test-sinatra:latest
+```docker run -it -e "ENVIRONMENT=test" -p 4567:4567 daraghmartin/test-sinatra:latest```
 
-curl http://localhost:4567/
+### Testing Manually
 
-curl http://localhost:4567/?name=y
+Test root:
 
-curl http://localhost:4567/api/hello/
+```curl http://localhost:4567/```
 
-** Environment behaviour
+Test with a name:
 
-specifying different Environment Variables will change the behaviour
+```curl http://localhost:4567/?name=some_name```
+
+Test api:
+
+```curl http://localhost:4567/api/hello/```
+
+### Rspec
+
+```cd app && ./test-local.sh```
+
+
+### Environment behaviour
+
+Specifying different Environment Variables will change the behaviour
 
 e.g. -e "ENVIRONMENT=test"
+
+Call ```curl http://localhost:4567/api/hello/ ``` and you will see ```{"hello":"world","environment":"test"}``` versus ```{"hello":"world","environment":"no-env"}```
+
+### Compose
+
+```docker-compose up```
+
+### Run remotely
+
+At https://hub.docker.com/r/daraghmartin/test-sinatra/
+
+The images are on docker hub so just do a: ```docker pull daraghmartin/test-sinatra```
+
+Drop into your favourite local repo or store and run.
