@@ -3,7 +3,12 @@ Test Sinatra in a container
 
 Each file should be run from the directory itself.
 
-Install the chef_dk to get all the requirements for testing
+Install the chef_dk to get all the requirements for developing/testing OR install ruby, rspec, etc.
+
+### Status
+
+[![Build Status](https://travis-ci.org/daraghmartin/test-sinatra.svg?branch=master)](https://github.com/daraghmartin/test-sinatra)
+
 
 ### App
 
@@ -62,8 +67,18 @@ Call ```curl http://localhost:4567/api/hello/ ``` and you will see ```{"hello":"
 
 ### Run remotely
 
+1)
+
 At https://hub.docker.com/r/daraghmartin/test-sinatra/
 
 The images are on docker hub so just do a: ```docker pull daraghmartin/test-sinatra```
 
 Drop into your favourite local repo or store and run.
+
+2) 
+
+Integrate with compose
+
+3)
+
+There is an example chef cookbook supplied.  Include "recipe[run-sinatra::run]" in your run list.
