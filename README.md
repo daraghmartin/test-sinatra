@@ -5,6 +5,11 @@ Each file should be run from the directory itself.
 
 Install the chef_dk to get all the requirements for developing/testing OR install ruby, rspec, etc.
 
+### Status
+
+[![Build Status](https://travis-ci.org/daraghmartin/test-sinatra.svg?branch=master)](https://github.com/daraghmartin/test-sinatra)
+
+
 ### App
 
 ```cd app && ./run-local.sh - this will run it for you ```
